@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "https://ideapool.community/badge-dashboard/config.schema.json",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "input": {
+      "type": "string",
+      "title": "Input path",
+      "description": "Path/Glob to the input Heroes XLSX exports",
+      "default": "{config}/input/**/*.xlsx",
+      "pattern": "\\.xlsx?$",
+      "minLength": 5
+    },
+    "output": {
+      "type": "string",
+      "title": "Output path",
+      "description": "Path of the folder to generate the output.",
+      "default": "{config}/output",
+      "minLength": 1
+    },
+    "profileImages": {
+      "type": "string",
+      "title": "Profile images' path",
+      "description": "Path to the folder where the profile images are located.",
+      "default": "{config}/images/profile",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "title": "Dashboard Title",
+      "description": "The title of the dashboard.",
+      "default": "Badge Dashboard",
+      "minLength": 1
+    },
+    "header": {
+      "type": "string",
+      "title": "Dashboard Header",
+      "description": "The header text of the dashboard.",
+      "default": "We are proud of...",
+      "minLength": 1
+    },
+    "ignoreMissingImages": {
+      "type": "boolean",
+      "description": "Whether missing images should be replaced with placeholder, or error thrown if there is any.",
+      "default": false
+    },
+    "showUnassignedBadges": {
+      "type": "boolean",
+      "description": "Whether badges which does not have any assignment should be shown.",
+      "default": false
+    },
+    "showProfileImages": {
+      "type": "boolean",
+      "description": "Whether profile images should be shown or just names.",
+      "default": true
+    },
+    "blacklist": {
+      "type": "array",
+      "description": "Person names to ignore from assignments.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "badges": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Badge Name",
+            "description": "The name of the badge.",
+            "minLength": 1
+          },
+          "image": {
+            "type": "string",
+            "title": "Badge Image",
+            "description": "The image of the badge.",
+            "pattern": "\\.(png|jpeg|jpg|bmp)$",
+            "minLength": 4
+          },
+          "from": {
+            "type": "string",
+            "title": "Badge giver",
+            "description": "The badge giver (From) to filter badges for."
+          },
+          "levels": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Badge Level Name",
+                  "description": "The name of the badge level.",
+                  "minLength": 1
+                },
+                "image": {
+                  "type": "string",
+                  "title": "Badge Level Image",
+                  "description": "The image of the badge level.",
+                  "pattern": "\\.(png|jpeg|jpg|bmp)$",
+                  "minLength": 4
+                },
+                "n": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "title": "Badge Level",
+                  "description": "Number of assignments needed to achieve this level."
+                }
+              },
+              "required": [
+                "name",
+                "image",
+                "n"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "name",
+          "image"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "template": {
+      "type": "string",
+      "title": "Dashboard Template",
+      "description": "The template to use, either path to an EJS file or one of the build-in templates.",
+      "oneOf": [
+        {
+          "enum": [
+            "standalone",
+            "embedded"
+          ]
+        },
+        {
+          "minLength": 4,
+          "pattern": "\\.ejs$"
+        }
+      ]
+    },
+    "theme": {
+      "type": "string",
+      "title": "Dashboard Theme",
+      "description": "The theme to use, either path to a CSS file or one of the built-in themes.",
+      "oneOf": [
+        {
+          "enum": [
+            "giant_eathal",
+            "leto_light",
+            "leto_dark",
+            "odde_light",
+            "odde_dark"
+          ]
+        },
+        {
+          "minLength": 4,
+          "pattern": "\\.css$"
+        }
+      ],
+      "default": "giant_eathal"
+    }
+  },
+  "required": [
+    "badges"
+  ],
+  "additionalProperties": false
+}
