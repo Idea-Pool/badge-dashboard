@@ -1,0 +1,9 @@
+{
+    "badges": [],
+    "title": "Dashboard",
+    "header": "We are proud to our top speakers!",
+    "ignoreMissingImages": true,
+    "template": "embedded",
+    "theme": "odde_dark",
+    "blacklist": []
+}
