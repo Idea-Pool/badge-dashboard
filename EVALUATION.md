@@ -28,9 +28,9 @@ How should we retrieve the images (badge, profile images) displayed on the dashb
 
 | Approach         | Pros. | Cons. |
 |:-----------------|:------|:------|
-| **Static**       | _TBD_ | _TBD_ |
-| **Semi-Dynamic** | _TBD_ | _TBD_ |
-| **Dynamic**      | _TBD_ | _TBD_ |
+| **Static**       | - Quicker served static images<br>- No need to implement authentication to Heroes/UPSA | - Need to be updated with all new badge/people |
+| **Semi-Dynamic** | - Automatically updated when necessary<br>- Quicker served static images | - Need to have access to Heroes/UPSA to download |
+| **Dynamic**      | - No need to save images with application<br>- New images automatically retrieved when necessary | - Need to have live access to Heroes/UPSA to download<br>- Depends on Heroes/UPSA to retrieve images |
 
 Winner: _TBD_
 
