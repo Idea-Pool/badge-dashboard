@@ -48,7 +48,7 @@ In what format, should we store the badge assignment data which will be displaye
 |:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------|
 | **Original** | - No need for conversion script                                                                                                              | - Data contains too many fields<br>- XLS is harder to handle in JS                                  |
 | **JSON**     | - Much simpler, lightweight format<br>- Can only contain the necessary fields (original + generater)<br>- Native support in JS/TS technology | - Conversion script is necessary from the original format<br>- No native support in Java technology |
-| **No data**  | - No need to manage/store data                                                                                                               |                                                                                                     |
+| **No data**  | - No need to manage/store data                                                                                                               | - It only works with **static** rendering.                                                          |
 
 #### Result
 
@@ -63,13 +63,15 @@ How often, and how the synchronization, actualization of the data will be done?
 1. **Scheduled**: The assignment data is refreshed on schedule, based on the badge assignment frequency (e.g. per month/week).
 1. **Live**: The assignment data is retrieved when the page is loaded (with caching) and the dashboard show the current status all the time.
 
-| Approach      | Pros. | Cons. |
-|:--------------|:------|:------|
-| **On demand** | _TBD_ | _TBD_ |
-| **Scheduled** | _TBD_ | _TBD_ |
-| **Live**      | _TBD_ | _TBD_ |
+| Approach      | Pros.                                                   | Cons.                                                                                                                                                      |
+|:--------------|:--------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **On demand** | - No need to dynamically load assignment data from API  | - Need to be done manually                                                                                                                                 |
+| **Scheduled** | - With proper schedule, the API is not loaded that much | - Need to be automated                                                                                                                                     |
+| **Live**      | - Always actual data is displayed on the page           | - It might mean significant load to the APIs<br>- Need to have access to Heroes API, or separate script needs to be created to retrieve data (too complex) |
 
-Winner: _TBD_
+#### Result
+
+The **on demand** approach will be used as for the scope of the PoC, as the targeted badges are not assigned such often that it would require live data.
 
 ### Rendering
 
