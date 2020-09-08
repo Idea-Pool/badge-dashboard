@@ -96,12 +96,14 @@ What technology should be used for the dashboard?
 1. **JS/TS**: NodeJS server and EJS templating enginer or React/Gatsby.
 1. **Java**: Java Spring application with any templating enginer.
 
-| Approach  | Pros. | Cons. |
-|:----------|:------|:------|
-| **JS/TS** | _TBD_ | _TBD_ |
-| **Java**  | _TBD_ | _TBD_ |
+| Approach  | Pros.                                                                                                                                    | Cons.                                                                                                            |
+|:----------|:-----------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------|
+| **JS/TS** | - Quick, fast development, due to huge community and tools<br>- Expertise is already in this technology<br>- Native for web applications |                                                                                                                  |
+| **Java**  | - Enterprise technology, with strong background and community                                                                            | - No native support for JSON<br>- Expertise needs to be gathered beforehand<br>- Not native for web applications |
 
-Winner: _TBD_
+#### Result
+
+The **JS/TS** technology will be used, because of the already existing expertise, thus good ROI.
 
 ## Approach
 
