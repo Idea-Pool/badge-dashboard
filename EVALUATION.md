@@ -107,6 +107,12 @@ The **JS/TS** technology will be used, because of the already existing expertise
 
 ## Approach
 
-_TBD_
+The implemented PoC is based on:
+
+- **Synchronization** is **on demand**: The assignment data is refreshed on demand, when necessary (e.g. when we know that a new badge is assigned).
+- All assets and resources are **static**: All images are saved manually as static resources.
+- **Rendering** is **static**: The whole dashboard (HTML, CSS) is rendered once, per build and the static page is displayed all the time.
+- Final **data** is embedded in the static file, but as intermediate format **JSON** format is used: The assignment data is stored in a convenient JSON format which is produced from the original input format, and that is used during rendering.
+- **Technology** is **JS/TS**: NodeJS server and EJS templating engine.
 
 ![Dashboard generation](flow.png)
