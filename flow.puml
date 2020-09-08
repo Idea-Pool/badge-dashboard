@@ -2,12 +2,12 @@
 
 (*) --> "Parsing data"
 note left: input: XLSX
---> "Converting data to interm format"
+--> "Converting data\nto interm format"
 note right: output: JSON
---> "Identifying missing images"
+--> "Identifying\nmissing images"
 note right: output: JSON with missing images
 if "Missing images allowed" then
-    --> [true] "Creating blank images for missing ones"
+    --> [true] "Creating blank images\nfor missing ones"
     note right: output: PNGs
     --> "Generating HTML page"
     note right: output: HTML
