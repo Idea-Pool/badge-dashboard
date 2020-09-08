@@ -1,0 +1,20 @@
+@startuml
+
+(*) --> "Parsing data"
+note left: input: XLSX
+--> "Converting data to interm format"
+note right: output: JSON
+--> "Identifying missing images"
+note right: output: JSON with missing images
+if "Missing images allowed" then
+    --> [true] "Creating blank images for missing ones"
+    note right: output: PNGs
+    --> "Generating HTML page"
+    note right: output: HTML
+    --> (*)
+else
+    --> [false] "Printing error message"
+    --> (*)
+endif
+
+@enduml

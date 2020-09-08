@@ -108,3 +108,5 @@ The **JS/TS** technology will be used, because of the already existing expertise
 ## Approach
 
 _TBD_
+
+![Dashboard generation](flow.png)
