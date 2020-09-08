@@ -80,12 +80,14 @@ How should we render/display the actual dashboard page?
 1. **Static**: The whole dashboard (HTML, CSS) is rendered once, per build and the static page is displayed all the time.
 1. **Dynamic**: The dashboard is rendered on visit from the current assigment data set.
 
-| Approach    | Pros. | Cons. |
-|:------------|:------|:------|
-| **Static**  | _TBD_ | _TBD_ |
-| **Dynamic** | _TBD_ | _TBD_ |
+| Approach    | Pros.                                                                                      | Cons.                                                                           |
+|:------------|:-------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
+| **Static**  | - No need to create complex application<br>- Can be used in multiple platforms<br>- Faster | - Needs to be regenarated/deployed when new data arrives or any change in style |
+| **Dynamic** | - Can be easily updated, improved, and fixed                                               | - Can be used in less platforms<br>- Slower                                     |
 
-Winner: _TBD_
+#### Result
+
+The **static** approach will be used as for the scope of the PoC, as the data displayed on the page will be mostly static as well. Also, this allows to deploy the dashboard mostly anywhere, or with minimal improvement.
 
 ### Technology
 
