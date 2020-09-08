@@ -26,13 +26,15 @@ How should we retrieve the images (badge, profile images) displayed on the dashb
 1. **Semi-Dynamic**: All images are saved by a script on demand as static resource and the saved static resources used on the dashboard.
 1. **Dynamic**: All images are used from their source (Heroes, Upsa) dynamically on the dashboard.
 
-| Approach         | Pros. | Cons. |
-|:-----------------|:------|:------|
-| **Static**       | - Quicker served static images<br>- No need to implement authentication to Heroes/UPSA | - Need to be updated with all new badge/people |
-| **Semi-Dynamic** | - Automatically updated when necessary<br>- Quicker served static images | - Need to have access to Heroes/UPSA to download |
+| Approach         | Pros.                                                                                            | Cons.                                                                                                |
+|:-----------------|:-------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------|
+| **Static**       | - Quicker served static images<br>- No need to implement authentication to Heroes/UPSA           | - Need to be updated with all new badge/people                                                       |
+| **Semi-Dynamic** | - Automatically updated when necessary<br>- Quicker served static images                         | - Need to have access to Heroes/UPSA to download                                                     |
 | **Dynamic**      | - No need to save images with application<br>- New images automatically retrieved when necessary | - Need to have live access to Heroes/UPSA to download<br>- Depends on Heroes/UPSA to retrieve images |
 
-Winner: _TBD_
+#### Result
+
+The **static** approach will be used as for the scope of the PoC, as using the respective APIs would require too much effort to implement. This would mean more manual work at the beginning (saving badge/employee images) and small works on demand.
 
 ### Data format
 
@@ -42,13 +44,16 @@ In what format, should we store the badge assignment data which will be displaye
 1. **JSON**: The assignment data is stored in a convenient JSON format which is produced from the original input format, and that is used during rendering.
 1. **No data**: In case of **static rendering**, there is no need for the data to be stored with the application, given that the page is already rendered from the data.
 
-| Approach     | Pros. | Cons. |
-|:-------------|:------|:------|
-| **Original** | _TBD_ | _TBD_ |
-| **JSON**     | _TBD_ | _TBD_ |
-| **No data**  | _TBD_ | _TBD_ |
+| Approach     | Pros.                                                                                                                                        | Cons.                                                                                               |
+|:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------|
+| **Original** | - No need for conversion script                                                                                                              | - Data contains too many fields<br>- XLS is harder to handle in JS                                  |
+| **JSON**     | - Much simpler, lightweight format<br>- Can only contain the necessary fields (original + generater)<br>- Native support in JS/TS technology | - Conversion script is necessary from the original format<br>- No native support in Java technology |
+| **No data**  | - No need to manage/store data                                                                                                               |                                                                                                     |
 
-Winner: _TBD_
+#### Result
+
+If the **static** rendering will be used, then the **No data** is the obvious choice.
+Otherwise, the **JSON** format will be used to be able to manage effectively the test data.
 
 ### Synchronization
 
