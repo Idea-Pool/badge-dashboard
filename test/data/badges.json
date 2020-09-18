@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Idea Pool Presenter",
+        "levels": [
+            {
+                "name": "Idea Pool Contributor",
+                "n": 5,
+                "image": "{config}/images/badge/idea-pool-contributor.png"
+            },
+            {
+                "name": "Idea Pool Professional",
+                "n": 10,
+                "image": "{config}/images/badge/idea-pool-professional.png"
+            },
+            {
+                "name": "Idea Pool Master",
+                "n": 20,
+                "image": "{config}/images/badge/idea-pool-master.png"
+            },
+            {
+                "name": "Idea Pool Jedi",
+                "n": 30,
+                "image": "{config}/images/badge/idea-pool-jedi.png"
+            }
+        ],
+        "image": "{config}/images/badge/idea-pool-presenter.png"
+    }
+]
