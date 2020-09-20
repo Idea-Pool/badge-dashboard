@@ -9,10 +9,20 @@ import { existsSync } from "fs";
  */
 
 /**
+ * @typedef {object} AssignedTo
+* @property {string} employeeId
+* @property {string} employeeUid
+* @property {string} employeeName
+* @property {number} n
+ */
+
+/**
  * @typedef {object} Badge
  * @property {string} name
+ * @property {number} [n]
  * @property {BadgeLevel[]} [levels]
  * @property {string} [image]
+ * @property {AssignedTo[]} [assignments]
  */
 
 /**
@@ -104,4 +114,72 @@ export const getMissingBadgeImages = (badges) => {
         }
     }
     return missing;
+};
+
+/**
+ * @param {BadgeAssignment[]} assignments
+ * @param {Badge[]} badges
+ */
+export const processAssignments = (assignments, badges) => {
+    const allBadges = [];
+    const assignedTo = {};
+    for (const badge of badges) {
+        const badgeAssignments = {};
+        for (const assignment of assignments) {
+            const { badge: assignedBadge, employeeId, employeeName, employeeUid } = assignment;
+            if (assignedBadge.toLowerCase() === badge.name.toLowerCase()) {
+                if (!(employeeId in badgeAssignments)) {
+                    badgeAssignments[employeeId] = 0;
+                }
+                badgeAssignments[employeeId]++;
+                if (!(employeeId in assignedTo)) {
+                    assignedTo[employeeId] = { employeeId, employeeName, employeeUid };
+                }
+            }
+        }
+        const newBadge = { name: badge.name, image: badge.image, assignments: [] };
+        delete newBadge.levels;
+        if (badge.levels && badge.levels.length) {
+            allBadges.push(newBadge);
+
+            badge.levels.sort((b1, b2) => b2.n - b1.n);
+            const levelBadges = [];
+            for (const level of badge.levels) {
+                const levelBadge = { name: level.name, image: level.image, n: level.n, assignments: [] };
+                for (const employeeId in badgeAssignments) {
+                    const n = badgeAssignments[employeeId];
+                    if (n >= level.n) {
+                        levelBadge.assignments.push({
+                            ...assignedTo[employeeId],
+                            n,
+                        });
+                        badgeAssignments[employeeId] = 0;
+                    }
+                }
+                levelBadge.assignments.sort((a1, a2) => a2.n - a1.n);
+                levelBadges.push(levelBadge);
+            }
+            levelBadges.reverse();
+            allBadges.push(...levelBadges);
+            for (const employeeId in badgeAssignments) {
+                const n = badgeAssignments[employeeId];
+                if (typeof n === "number" && n) {
+                    newBadge.assignments.push({
+                        ...assignedTo[employeeId],
+                        n,
+                    });
+                }
+            }
+        } else {
+            for (const employeeId in badgeAssignments) {
+                newBadge.assignments.push({
+                    ...assignedTo[employeeId],
+                    n: badgeAssignments[employeeId],
+                });
+            }
+            allBadges.push(newBadge);
+        }
+        newBadge.assignments.sort((a1, a2) => a2.n - a1.n);
+    }
+    return allBadges;
 };

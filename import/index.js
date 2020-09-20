@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { options } from "yargs";
-import { getMissingBadgeImages, loadBadgeConfig } from "./badge";
+import { getMissingBadgeImages, loadBadgeConfig, processAssignments } from "./badge";
 import { loadXLS } from "./xls";
 
 const args = options({
@@ -30,7 +30,27 @@ const args = options({
 const { input, badges: badgesConfig, images, ignoreMissingImages } = args;
 
 const assignment = loadXLS(input);
-const badges = loadBadgeConfig(badgesConfig);
-const missingImages = getMissingBadgeImages(badges);
+console.log(`Assignments loaded: ${assignment.length}`);
+console.log();
 
-console.log({ missingImages });
+const badges = loadBadgeConfig(badgesConfig);
+console.log(`Badges loaded: ${badges.length}`);
+console.log();
+
+const missingImages = getMissingBadgeImages(badges);
+if (missingImages.length) {
+    console.log("Missing badge images:");
+    missingImages.forEach((image, i) => {
+        console.log(`${i + 1}. ${image}`);
+    });
+    console.log();
+}
+
+const processedBadges = processAssignments(assignment, badges);
+console.log("Badge assignments:");
+for (const badge of processedBadges) {
+    console.log(` - ${badge.name}${badge.n ? ` (${badge.n}+)` : ""}`);
+    for (const assignedTo of badge.assignments) {
+        console.log(`   - ${assignedTo.employeeName}: ${assignedTo.n}`);
+    }
+}
