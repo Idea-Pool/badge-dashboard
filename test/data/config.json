@@ -1,5 +1,6 @@
 {
-    "input": "test/data/input/**/*.xlsx",
+    "input": "{config}/input/**/*.xlsx",
+    "output": "{config}/output",
     "badges": [
         {
             "name": "Idea Pool Presenter",
@@ -40,5 +41,7 @@
         }
     ],
     "profileImages": "{config}/images/profile",
-    "ignoreMissingImages": true
+    "ignoreMissingImages": true,
+    "title": "Idea Pool",
+    "header": "We are proud to our top speakers!"
 }

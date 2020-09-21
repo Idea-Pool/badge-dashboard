@@ -107,3 +107,4 @@ dist
 test/data/images/badge/*.png
 test/data/images/profile/*.png
 test/data/input/*.xlsx
+test/data/output/*.html
