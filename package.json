@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node bin/generate.js",
+    "test": "npm start -- --config test/data/config.json",
     "lint": "eslint . --fix"
   },
   "repository": {

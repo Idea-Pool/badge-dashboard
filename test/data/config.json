@@ -38,5 +38,7 @@
             ],
             "image": "{config}/images/badge/idea-pool-active-member.png"
         }
-    ]
+    ],
+    "profileImages": "{config}/images/profile",
+    "ignoreMissingImages": true
 }

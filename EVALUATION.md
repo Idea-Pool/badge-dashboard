@@ -115,4 +115,4 @@ The implemented PoC is based on:
 - Final **data** is embedded in the static file, but as intermediate format **JSON** format is used: The assignment data is stored in a convenient JSON format which is produced from the original input format, and that is used during rendering.
 - **Technology** is **JS/TS**: NodeJS server and EJS templating engine.
 
-![Dashboard generation](flow.png)
+![Dashboard generation](uml/flow.png)
