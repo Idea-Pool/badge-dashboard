@@ -2,14 +2,42 @@
 <html>
 
 <head>
-    <title><%= title %></title>
+    <title><%= config.title %></title>
 </head>
 
 <body>
-    <div>
-        <h1><%= title %></h1>
-        <p><%= header %></p>
-    </div>
+    <header>
+        <h1><%= config.title %></h1>
+        <p><%= config.header %></p>
+    </header>
+    <main>
+        <% for (var i = 0; i < badges.length; ++i) { %>
+        <% var badge = badges[i]; %>
+        <section class="badge" data-badge-name="<%= badge.name %>">
+            <div class="tile">
+                <div class="image">&nbsp;</div>
+                <h2><%= badge.name %></h2>
+            </div>
+            <div class="profiles">
+                <ul>
+                    <% for (var j = 0; j < badge.assignments.length; ++j) { %>
+                    <% var assignment = badge.assignments[j]; %>
+                    <% if (config.showProfileImages) { %>
+                    <li class="profile profile-image">
+                        <div class="image">&nbsp;</div>
+                        <h3><%= assignment.name %> <span class="badge"><%= assignment.n %></span></h3>
+                    </li>
+                    <% } else { %>
+                    <li class="profile">
+                        <h3><%= assignment.name %> <span class="badge"><%= assignment.n %></span></h3>
+                    </li>
+                    <% } %>
+                    <% } %>
+                </ul>
+            </div>
+        </section>
+        <% } %>
+    </main>
 </body>
 
 </html>

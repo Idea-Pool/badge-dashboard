@@ -40,7 +40,7 @@
             "image": "{config}/images/badge/idea-pool-active-member.png"
         },
         {
-            "name": "Community Thank you",
+            "name": "Thank you from Community!",
             "image": "{config}/images/badge/community-thank-you.png",
             "from": "Idea Pool Community"
         },
@@ -48,17 +48,17 @@
             "name": "Community Active Contributor",
             "levels": [
                 {
-                    "name": "Community Active Contributor",
+                    "name": "Community Active Contributor (Level 1)",
                     "image": "{config}/images/badge/community-active-contributor-2.png",
                     "n": 5
                 },
                 {
-                    "name": "Community Active Contributor",
+                    "name": "Community Active Contributor (Level 2)",
                     "image": "{config}/images/badge/community-active-contributor-3.png",
                     "n": 10
                 },
                 {
-                    "name": "Community Active Contributor",
+                    "name": "Community Active Contributor (Level 3)",
                     "image": "{config}/images/badge/community-active-contributor-4.png",
                     "n": 15
                 }
@@ -68,6 +68,8 @@
     ],
     "profileImages": "{config}/images/profile",
     "ignoreMissingImages": true,
+    "showUnassignedBadges": false,
+    "showProfileImages": false,
     "title": "Idea Pool",
     "header": "We are proud to our top speakers!"
 }
