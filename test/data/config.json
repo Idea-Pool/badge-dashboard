@@ -38,6 +38,32 @@
                 }
             ],
             "image": "{config}/images/badge/idea-pool-active-member.png"
+        },
+        {
+            "name": "Community Thank you",
+            "image": "{config}/images/badge/community-thank-you.png",
+            "from": "Idea Pool Community"
+        },
+        {
+            "name": "Community Active Contributor",
+            "levels": [
+                {
+                    "name": "Community Active Contributor",
+                    "image": "{config}/images/badge/community-active-contributor-2.png",
+                    "n": 5
+                },
+                {
+                    "name": "Community Active Contributor",
+                    "image": "{config}/images/badge/community-active-contributor-3.png",
+                    "n": 10
+                },
+                {
+                    "name": "Community Active Contributor",
+                    "image": "{config}/images/badge/community-active-contributor-4.png",
+                    "n": 15
+                }
+            ],
+            "image": "{config}/images/badge/community-active-contributor.png"
         }
     ],
     "profileImages": "{config}/images/profile",
