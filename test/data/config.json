@@ -71,5 +71,12 @@
     "showUnassignedBadges": false,
     "showProfileImages": false,
     "title": "Idea Pool",
-    "header": "We are proud to our top speakers!"
+    "header": "We are proud to our top speakers!",
+    "blacklist": [
+        "Bhargavi Sriram",
+        "Sowmya Surampalli",
+        "Radhika Singh",
+        "Prabhjot Dua",
+        "Nishasingh Kushwaha"
+    ]
 }
