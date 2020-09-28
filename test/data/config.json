@@ -69,7 +69,7 @@
     "profileImages": "{config}/images/profile",
     "ignoreMissingImages": true,
     "showUnassignedBadges": false,
-    "showProfileImages": true,
+    "showProfileImages": false,
     "title": "Idea Pool",
     "header": "We are proud to our top speakers!",
     "blacklist": [
