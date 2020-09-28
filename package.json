@@ -35,6 +35,8 @@
     "eslint-plugin-babel": "^5.3.1",
     "glob": "^7.1.6",
     "husky": "^4.3.0",
+    "image-data-uri": "^2.0.1",
+    "md5": "^2.3.0",
     "normalize.css": "^8.0.1",
     "pretty": "^2.0.0",
     "uglify-es": "^3.3.9",

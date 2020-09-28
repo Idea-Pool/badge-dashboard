@@ -5,6 +5,12 @@
     <title><%= config.title %></title>
     <%- include('/../node_modules/normalize.css/normalize.css') %>
     <%- include('/style.css') %>
+    <style>
+        .image { background-size: contain; }
+        <% for (var image in images) { %>
+            .image-<%= image %> { background: url("<%- images[image] %>"); }
+        <% } %>
+    </style>
 </head>
 
 <body>
@@ -17,7 +23,7 @@
         <% var badge = badges[i]; %>
         <section class="badge" data-badge-name="<%= badge.name %>">
             <div class="tile">
-                <div class="image">&nbsp;</div>
+                <div class="image image-<%= badge.image %>">&nbsp;</div>
                 <h2><%= badge.name %></h2>
             </div>
             <div class="profiles">
@@ -26,7 +32,7 @@
                     <% var assignment = badge.assignments[j]; %>
                     <% if (config.showProfileImages) { %>
                     <li class="profile profile-image">
-                        <div class="image">&nbsp;</div>
+                        <div class="image image-<%= assignment.image %>">&nbsp;</div>
                         <h3><%= assignment.name %> <span class="badge"><%= assignment.n %></span></h3>
                     </li>
                     <% } else { %>
