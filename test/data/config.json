@@ -69,8 +69,10 @@
     "profileImages": "{config}/images/profile",
     "ignoreMissingImages": true,
     "showUnassignedBadges": false,
-    "showProfileImages": false,
+    "showProfileImages": true,
     "title": "Idea Pool",
+    "theme": "odde_dark",
+    "template": "embedded",
     "header": "We are proud to our top speakers!",
     "blacklist": [
         "Bhargavi Sriram",

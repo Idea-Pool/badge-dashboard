@@ -1,0 +1,336 @@
+/* Made by David_Guzsik@epam.com */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #efefef;
+}
+
+header {
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+    background-color: #1a9cb0;
+    /* https://www.heropatterns.com/ "Graph Paper" */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2342e0f0' fill-opacity='0.28'%3E%3Cpath opacity='.3' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 0 .5rem;
+}
+
+header p {
+    margin: 0;
+}
+
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main>.badge {
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    display: block;
+}
+
+main>.badge:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+main>.badge .tile {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+main>.badge .tile h2 {
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+    background: rgba(26, 156, 176, .1);
+    border-radius: 1em;
+    color: #1a9cb0;
+}
+
+main>.badge .tile .image {
+    width: 40%;
+    padding-top: 40%;
+    height: 0;
+    margin: 0 auto;
+    filter: drop-shadow(0 5px 7px rgba(0, 0, 0, .1));
+    border-radius: 50%;
+}
+
+main>.badge .tile .image, main>.badge .profiles .profile .image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main>.badge .profiles ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+main>.badge .profiles .profile {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: .5rem;
+    flex-basis: 100%;
+    overflow: hidden;
+}
+
+main>.badge .profiles .profile:not(:last-child) {
+    margin-bottom: .5rem;
+}
+
+main>.badge .profiles .profile-image {
+    border: 2px solid rgba(26, 156, 176, .1);
+}
+
+main>.badge .profiles .profile h3 {
+    display: block;
+    margin: 0;
+    padding: .25rem .75rem;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+main>.badge .profiles .profile:not(.profile-image) h3 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+main>.badge .profiles .profile h3 .badge {
+    color: #1a9cb0;
+    background: rgba(26, 156, 176, .1);
+    text-align: center;
+    line-height: 1em;
+    padding: .1rem .8rem;
+    margin-left: .5rem;
+    border-radius: 1em;
+}
+
+main>.badge .profiles .profile-image .image {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(26, 156, 176, .05);
+}
+
+main>.badge .profiles .profile h3 .badge:after {
+    text-transform: lowercase;
+    content: "x";
+}
+
+/* Tablet */
+
+@media all and (min-width: 600px) {
+    header {
+        padding: 3.5rem;
+        min-height: 30vh;
+    }
+    header h1 {
+        font-size: 2em;
+        margin: 0 0 1rem;
+    }
+    main {
+        padding: 2rem;
+    }
+    main>.badge:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+    main>.badge .tile .image {
+        width: 25%;
+        padding-top: 25%;
+    }
+    main>.badge .profiles {
+        margin-left: -.5rem;
+        margin-right: -.5rem;
+        margin-bottom: -1rem;
+    }
+    main>.badge .profiles .profile {
+        flex-basis: calc(50% - 1rem);
+        margin-right: .5rem;
+        margin-left: .5rem;
+        margin-bottom: 1rem;
+        border: 2px solid rgba(26, 156, 176, .1);
+    }
+    main>.badge .profiles .profile:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+    main>.badge .profiles .profile:not(.profile-image) {
+        padding: .25rem;
+    }
+    main>.badge .profiles .profile h3 {
+        padding: .5rem;
+    }
+    main>.badge .profiles .profile-image .image {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Desktop */
+
+@media all and (min-width: 900px) {
+    header {
+        padding: 5rem;
+        min-height: 50vh;
+        font-size: 2rem;
+    }
+    header h1 {
+        font-size: 3em;
+        margin: 0 0 2rem;
+    }
+    main>.badge {
+        border-radius: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: stretch;
+    }
+    main>.badge:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+    main>.badge .tile {
+        position: relative;
+        flex: 0 0 250px;
+        display: flex;
+        flex-flow: column-reverse nowrap;
+        text-align: center;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 2rem;
+    }
+    main>.badge .tile .image {
+        width: 100%;
+        padding-top: 100%;
+    }
+    main>.badge .tile h2 {
+        margin-top: 0;
+    }
+    main>.badge .profiles {
+        flex: 1 1 100%;
+        border-left: 1px solid rgba(0, 0, 0, .2);
+        padding-left: 2rem;
+    }
+    main>.badge .profiles .profile.profile-image {
+        position: relative;
+        overflow: hidden;
+        padding: .5rem;
+    }
+    main>.badge .profiles .profile {
+        margin: 0 1rem 1rem 0;
+        padding: 0;
+        flex-basis: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+    }
+    main>.badge .profiles .profile h3 {
+        padding: 0;
+        font-size: 1.2rem;
+    }
+    main>.badge .profiles .profile:not(.profile-image) h3 {
+        padding: .5rem .5rem 0;
+        text-align: center;
+        line-height: 3rem;
+    }
+    main>.badge .profiles .profile-image .badge {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 125px;
+        transform: rotate(-45deg) translate(-28%, -135%);
+        padding: .2rem !important;
+        font-size: 1rem;
+        user-select: none;
+        margin: 0 !important;
+        border-radius: 0;
+    }
+    main>.badge .profile-image .image {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 1rem;
+        border-radius: .5rem;
+    }
+    main>.badge .profile:not(.profile-image) .badge {
+        display: block;
+        font-size: .9rem;
+        padding: .1rem .3rem .3rem !important;
+        text-transform: uppercase;
+        margin: .3rem -1rem -.5rem !important;
+        border-radius: 0 !important;
+        font-weight: bold;
+    }
+    main>.badge .profile:not(.profile-image) .badge:before {
+        content: "Received ";
+        font-weight: normal;
+        font-size: .8rem;
+    }
+    main>.badge .profile:not(.profile-image) .badge:after {
+        font-weight: normal;
+        font-size: .8rem;
+    }
+    main>.badge:nth-child(even) .profile:nth-child(6n) {
+        transform: rotate(1deg) scale(.95)
+    }
+    main>.badge:nth-child(even) .profile:nth-child(6n+1) {
+        transform: rotate(-2deg) scale(.98)
+    }
+    main>.badge:nth-child(even) .profile:nth-child(6n+2) {
+        transform: rotate(3deg) scale(1.05)
+    }
+    main>.badge:nth-child(even) .profile:nth-child(6n+3) {
+        transform: rotate(-3deg) scale(1)
+    }
+    main>.badge:nth-child(even) .profile:nth-child(6n+4) {
+        transform: rotate(2deg) scale(1.03)
+    }
+    main>.badge:nth-child(even) .profile:nth-child(6n+5) {
+        transform: rotate(-1deg) scale(.99)
+    }
+    main>.badge:nth-child(odd) .profile:nth-child(6n) {
+        transform: rotate(-2deg) scale(1)
+    }
+    main>.badge:nth-child(odd) .profile:nth-child(6n+1) {
+        transform: rotate(2deg) scale(.95)
+    }
+    main>.badge:nth-child(odd) .profile:nth-child(6n+2) {
+        transform: rotate(-1deg) scale(1.03)
+    }
+    main>.badge:nth-child(odd) .profile:nth-child(6n+3) {
+        transform: rotate(3deg) scale(1)
+    }
+    main>.badge:nth-child(odd) .profile:nth-child(6n+4) {
+        transform: rotate(-2deg) scale(1.05)
+    }
+    main>.badge:nth-child(odd) .profile:nth-child(6n+5) {
+        transform: rotate(-1deg) scale(.98)
+    }
+}

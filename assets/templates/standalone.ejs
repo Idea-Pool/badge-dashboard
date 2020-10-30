@@ -4,8 +4,8 @@
 <head>
     <title><%= config.title %></title>
     <%- include('/../node_modules/normalize.css/normalize.css') %>
-    <%- include('/style.css') %>
     <style>
+        <%- theme %>
         .image { background-size: contain; }
         <% for (var image in images) { %>
             .image-<%= image %> { background: url("<%- images[image] %>"); }
