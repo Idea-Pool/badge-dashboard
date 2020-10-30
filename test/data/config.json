@@ -1,6 +1,4 @@
 {
-    "input": "{config}/input/**/*.xlsx",
-    "output": "{config}/output",
     "badges": [
         {
             "name": "Idea Pool Presenter",
@@ -66,19 +64,22 @@
             "image": "{config}/images/badge/community-active-contributor.png"
         }
     ],
-    "profileImages": "{config}/images/profile",
-    "ignoreMissingImages": true,
-    "showUnassignedBadges": false,
-    "showProfileImages": true,
     "title": "Idea Pool",
-    "theme": "odde_dark",
-    "template": "embedded",
     "header": "We are proud to our top speakers!",
+    "ignoreMissingImages": true,
+    "template": "embedded",
     "blacklist": [
         "Bhargavi Sriram",
         "Sowmya Surampalli",
         "Radhika Singh",
         "Prabhjot Dua",
-        "Nishasingh Kushwaha"
+        "Nishasingh Kushwaha",
+        "Sandor Hamza",
+        "Lorant Miglecz",
+        "Agnes Tandor",
+        "Gergely Foldi",
+        "Adam Novak",
+        "Kitti Linter",
+        "Szabolcs Zsiros"
     ]
 }

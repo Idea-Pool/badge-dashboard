@@ -105,6 +105,7 @@ dist
 
 # Data
 test/data/images/badge/*.png
-test/data/images/profile/*.png
+test/data/images/profile/*.jpg
 test/data/input/*.xlsx
 test/data/output/*.html
+test/data/output/*.css

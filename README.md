@@ -19,6 +19,10 @@ yarn
 yarn generate --config config.json
 ```
 
+### Input
+
+The tool uses the **Heroes Admin** XLS export file, which must contain the following fields: `To: full name`, `From: email`, `Date` and `Badge`.
+
 ### Configuration
 
 | Property | Type | Description | Default |
@@ -51,6 +55,7 @@ The available **templates** are:
 |:---------|:-----|:------------|
 | `name` | `string` | Name of the badge. |
 | `image` | `string`<sup>1</sup> | Path to the image of the badge. |
+| `from` | `string` | If set, only assignment with this "From" field will be considered as match. | - |
 | `levels` | `BadgeLevel[]` | Configuration of the badge levels, if it is a multi-level badge, otherwise can be empty. |
 
 `BadgeLevel` configuration is the following:
