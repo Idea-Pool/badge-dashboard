@@ -28,7 +28,7 @@ jobs:
     - run: npm ci
     - run: rm -fr docs
     - run: mkdir docs
-    - run: cp -r example/output/*.html docs
+    - run: cp example/output/badges.html docs/index.html
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
