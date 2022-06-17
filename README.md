@@ -20,7 +20,7 @@ npm i
 4. Set up configuration file: `config.json`
 5. Generate static dashboard:
    ```shell
-   npm run generate --config config.json
+   npm run generate -- --config config.json
    ```
 
 ### Input
@@ -51,7 +51,7 @@ The available **themes** are:
 
 The available **templates** are:
 * **Standalone** (`standalone`), when a full, standalone HTML page is generated.
-* **Embedded** (`embedded`), when only a `div`, including all resource, is generated, which can be embedded into other HTML files or on Confluence.
+* **Embedded** (`embedded`), when only a `div`, including all resources, is generated, which can be embedded into other HTML files or on Confluence.
 
 `Badge` configuration is the following:
 
