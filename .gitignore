@@ -103,6 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
+.idea
+
 # Data
 data/images/badge/*.png
 data/images/profile/*.jpg
